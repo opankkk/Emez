@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<section class="consultation-section">
+    <div class="background-room">
+        <img src="{% static 'assets/ruangan.png' %}" alt="Background Room">
+    </div>
+    <div class="consultation-content">
+        <div class="orange-overlay"></div>
+        <div class="doctors-image">
+            <img src="{% static 'assets/dokter_banyak.png' %}" alt="Doctors">
+        </div>
+        <div class="text-content">
+            <h2>Konsultasi online dengan dokter kulit terbaik di Indonesia</h2>
+        </div>
+    </div>
+</section>
+<section class="doctor-selection">
+    <h2 class="section-title">Pilih Dokter</h2>
+    <div class="doctor-cards">
+        <!-- Doctor Card 1 -->
+        <div class="doctor-card">
+            <div class="doctor-photo">
+                <img src="{% static 'assets/doctor-photo1.jpg' %}" alt="Dr. Bryan H">
+                <span class="rating">4.7★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="price">Rp. 20.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-photo">
+                <img src="{% static 'assets/dokter2.jpg' %}" alt="Dr. Bryan H">
+                <span class="rating">4.7★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="price">Rp. 20.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="consultation-btn">Konsultasi</button>
+            </form>      
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-photo">
+                <img src="{% static 'assets/dokter3.jpg' %}" alt="Dr. Bryan H">
+                <span class="rating">4.7★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="price">Rp. 20.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="consultation-btn">Konsultasi</button>
+            </form>        
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-photo">
+                <img src="{% static 'assets/dokter4.jpg' %}" alt="Dr. Bryan H">
+                <span class="rating">4.7★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="price">Rp. 20.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="consultation-btn">Konsultasi</button>
+            </form> 
+        </div>
+        <!-- Repeat doctor cards as needed -->
+    </div>
+    <div class="search-doctor">
+        <button class="search-btn">Cari Dokter</button>
+    </div>
+</section>
+<section class="hospital-recommendation">
+    <div class="background-image">
+        <img src="{% static 'assets/periksa_kulit.jpeg' %}" alt="Medical Examination">
+    </div>
+    <div class="content-overlay">
+        <h2>Rekomendasi Rumah Sakit</h2>
+        <p>Temukan Klinik Terdekat yang Tepat untuk Kebutuhan Medis Anda</p>
+        <button class="search-clinic-btn">Cari Klinik</button>
+    </div>
+</section>
+<section class="products-section" id="products-section">
+    <div class="container">
+        <h2 class="section-title">Produk</h2>
+        
+        <div class="products-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'assets/cetirizine.jpg' %}" alt="Cetirizine">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Cetirizine HCI</h3>
+                    <p class="product-description">Obat antihistamin untuk mengatasi alergi</p>
+                    <p class="product-price">Rp 25.000</p>
+                    <button class="buy-button">Beli</button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'assets/lerzin.jpg' %}" alt="Lepzin">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Lepzin</h3>
+                    <p class="product-description">Cetirizine hydrochloride untuk pengobatan alergi</p>
+                    <p class="product-price">Rp 30.000</p>
+                    <button class="buy-button">Beli</button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'assets/acnes.png' %}" alt="Acnes">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Acnes</h3>
+                    <p class="product-description">Krim pengobatan jerawat dan perawatan kulit</p>
+                    <p class="product-price">Rp 28.000</p>
+                    <button class="buy-button">Beli</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="container">
+        <h2 class="section-title">Testimoni</h2>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                    <img src="{% static 'assets/test1.jpeg' %}" alt="Lisa" class="testimonial-image">
+                </div>
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">Codan</h3>
+                    <div class="quote-marks">"</div>
+                    <p class="testimonial-text" style="color: black;" >Sangat mudah dan cepat menyelesaikan masalah kulit saya seperti bercak sudah hilang</p>
+                    <div class="quote-marks closing">"</div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                    <img src="{% static 'assets/test2.jpeg' %}" alt="Codan" class="testimonial-image">
+                </div>
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">Hiekam</h3>
+                    <div class="quote-marks">"</div>
+                    <p class="testimonial-text" style="color: black;" >Sangat intuitif banget, kulit saya semakin mulus</p>
+                    <div class="quote-marks closing">"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+
+{% endblock content %}
+    

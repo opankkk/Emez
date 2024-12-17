@@ -1,0 +1,189 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<section class="doc-selection-content">
+    <h2 class="doc-section-title">Pilih Dokter</h2>
+<div class="search-section">
+    <div class="search-container">
+        <input type="text" placeholder="Cari DokterMu!" class="search-input">
+        <button class="search-button">
+            <img src="{% static 'assets/search.jpeg' %}" alt="Search">
+        </button>
+    </div>
+    <div class="filter-container">
+        <button class="filter-btn">Harga
+            <img src="{% static 'assets/dropdown.jpeg'%}"  alt="dropdown">
+            <div class="dropdown-content">
+                <a href="#">Termurah</a>
+                <a href="#">Termahal</a>
+            </div>
+        </button>
+        <button class="filter-btn">Rating
+            <img src="{% static 'assets/dropdown.jpeg' %}"  alt="dropdown">
+            <div class="dropdown-content">
+                <a href="#">Tertinggi</a>
+                <a href="#">Terendah</a>
+            </div>
+        </button>
+        <button class="filter-btn">Jenis Kelamin
+            <img src="{% static 'assets/dropdown.jpeg' %}"  alt="dropdown">
+            <div class="dropdown-content">
+                <a href="#">Pria</a>
+                <a href="#">Wanita</a>
+            </div>
+        </button>
+        <button class="clear-filter">Hapus Filter</button>
+    </div>
+    
+
+
+    <div class="doc-doctors-cards">
+        <!-- Doctor Card 1 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/doctor-photo1.jpg' %}" alt="Dr. Bryan H">
+                <span class="doc-rating">4.7 ★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="doc-specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="doc-price">Rp. 25.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+        <!-- Doctor Card 2 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/dokter2.jpg' %}" alt="dr. Sri Awalia Febriana">
+                <span class="doc-rating">5.0 ★</span>
+            </div>
+            <h3>dr. Sri Awalia Febriana</h3>
+            <p class="doc-specialization">Spesialis Alergi Imunologi</p>
+            <p class="doc-price">Rp. 50.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+
+        <!-- Doctor Card 3 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/dokter3.jpg' %}" alt="dr. Rosmelia">
+                <span class="doc-rating">4.9 ★</span>
+            </div>
+            <h3>dr. Rosmelia</h3>
+            <p class="doc-specialization">Spesialis Kulit dan Kelamin</p>
+            <p class="doc-price">Rp. 30.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+
+        <!-- Doctor Card 4 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/dokter4.jpg' %}" alt="Prof. Dr. Med. dr. Retno D">
+                <span class="doc-rating">4.9 ★</span>
+            </div>
+            <h3>Prof. Dr. Med. dr. Retno D</h3>
+            <p class="doc-specialization">Spesialis Dermatologi Pediatrik</p>
+            <p class="doc-price">Rp. 45.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="doc-doctors-cards2">
+        <!-- Doctor Card 1 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/dokter1.jpg' %}" alt="Dr. Bryan H">
+                <span class="doc-rating">4.7 ★</span>
+            </div>
+            <h3>Dr. Bryan H</h3>
+            <p class="doc-specialization">Spesialis Dermatologi alergi dan imunologi</p>
+            <p class="doc-price">Rp. 25.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+        <!-- Doctor Card 2 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="{% static 'assets/dokter4.jpg' %}" alt="dr. Sri Awalia Febriana">
+                <span class="doc-rating">5.0 ★</span>
+            </div>
+            <h3>dr. Sri Awalia Febriana</h3>
+            <p class="doc-specialization">Spesialis Alergi Imunologi</p>
+            <p class="doc-price">Rp. 50.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+
+        <!-- Doctor Card 3 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="assets/dokter3.jpg" alt="dr. Rosmelia">
+                <span class="doc-rating">4.9 ★</span>
+            </div>
+            <h3>dr. Rosmelia</h3>
+            <p class="doc-specialization">Spesialis Kulit dan Kelamin</p>
+            <p class="doc-price">Rp. 30.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+
+        <!-- Doctor Card 4 -->
+        <div class="doc-doctor-card">
+            <div class="doc-doctor-photo">
+                <img src="assets/dokter4.jpg" alt="Prof. Dr. Med. dr. Retno D">
+                <span class="doc-rating">4.9 ★</span>
+            </div>
+            <h3>Prof. Dr. Med. dr. Retno D</h3>
+            <p class="doc-specialization">Spesialis Dermatologi Pediatrik</p>
+            <p class="doc-price">Rp. 45.000</p>
+            <form action="/pilih_jadwal" method="get">
+                <button type="submit" class="doc-consultation-btn">Konsultasi</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="view-more-container">
+        <button class="view-more-btn">View More</button>
+    </div>
+</section>
+
+
+
+<script>
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Mencegah event bubbling
+            // Tutup dropdown lainnya
+            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                if (dropdown !== this.querySelector('.dropdown-content')) {
+                    dropdown.classList.remove('show');
+                }
+            });
+            // Toggle visibility dropdown yang diklik
+            this.querySelector('.dropdown-content').classList.toggle('show');
+        });
+    });
+    
+    // Tutup dropdown jika mengklik di luar area dropdown
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+            dropdown.classList.remove('show');
+        });
+    });
+    
+</script>
+
+
+{% endblock %}

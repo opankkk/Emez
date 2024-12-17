@@ -1,0 +1,49 @@
+{% extends 'base-history.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<!-- Sidebar (Unchanged) -->
+<aside class="sidebar">
+    <div class="menu-group">
+        <ul class="menu">
+            <li class="menu-item{% if request.path == '/profile' %} active{% endif %}">
+                <a href="/profile" style="color: inherit; text-decoration: none;">Profile</a>
+            </li>
+            <li class="menu-item{% if request.path == '/history_pemesanan' %} active{% endif %}">
+                <a href="/history_pemesanan" style="color: inherit; text-decoration: none;">Order History</a>
+            </li>
+            <li class="menu-item{% if request.path == '/settings' %} active{% endif %}">
+                <a href="/settings" style="color: inherit; text-decoration: none;">Settings</a>
+            </li>
+            <li class="menu-item{% if request.path == '/logout' %} active{% endif %}">
+                <a href="/logout" style="color: inherit; text-decoration: none;">Logout</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<!-- Main Content (Updated) -->
+<div class="section-main-content">
+    <header class="section-header">
+        <h1>Welcome, [User's Name]</h1>
+    </header>
+
+    <section class="section-profile-content">
+        <h1>Profile Details</h1>
+        <div class="section-profile-card">
+            <div class="section-profile-info">
+                <h2>User Name</h2>
+                <p>Email: user@example.com</p>
+                <p>Phone: +123456789</p>
+                <p>Address: 123 Main St, Anytown, Country</p>
+            </div>
+            <div class="section-profile-actions">
+                <button class="section-button-link">Edit Profile</button>
+                <button class="section-button-link">Change Password</button>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

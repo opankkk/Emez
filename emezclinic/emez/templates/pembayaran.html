@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="payment-container">
+    <h1 class="payment-title">Pembayaran</h1>
+    
+    <div class="doctor-appointment-card">
+        <div class="doctor-info">
+            <img src="{% static 'assets/doctor-photo1.jpg' %}" alt="Dr. Bryan H" class="doctor-image">
+            <div class="doctor-details">
+                <h2>Dr. Bryan H</h2>
+                <div class="appointment-details">
+                    <div class="detail-item">
+                        <span class="label">Hari:</span>
+                        <span class="value">24 Oktober 2024</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Waktu:</span>
+                        <span class="value">09:00 - 10:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-info">
+        <div class="virtual-account">
+            <span class="va-number">777445566999</span>
+            <span class="va-label">BCA VIRTUAL ACCOUNT</span>
+        </div>
+    </div>
+
+    <form action="/bukti_pembayaran" method="get">
+        <button type="submit" class="submit-button">Kirim</button>
+    </form>
+    
+</div>
+
+
+{% endblock %}

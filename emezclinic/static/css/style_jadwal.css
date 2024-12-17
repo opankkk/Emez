@@ -1,0 +1,263 @@
+*{
+    font-family: 'Poppins';
+}
+
+
+/* Container Utama untuk Halaman Jadwal */
+.jadwal-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.jadwal-container h1{
+    margin-bottom: 20px;
+    text-align: left;
+    margin-top: 70px;
+    
+}
+
+/* Card Dokter di Halaman Jadwal */
+.jadwal-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.jadwal-card-image {
+    flex: 0 0 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.jadwal-card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.jadwal-card-content {
+    text-align: left;
+    margin-left: 40px;
+    flex: 1;
+}
+
+.jadwal-card-content h2 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.jadwal-card-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.jadwal-card-content .jadwal-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Pilihan Tanggal */
+.jadwal-tanggal {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.jadwal-date {
+    background-color: #ff7f00; /* Warna oranye */
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jadwal-date:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jadwal-date .tanggal {
+    font-size: 24px;
+}
+
+.jadwal-date .tanggal-custom {
+    font-size: 15px;
+}
+
+.jadwal-date .bulan {
+    font-size: 14px;
+}
+
+/* Tampilan input tanggal */
+#date-input {
+    margin-top: 5px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Untuk mengubah tampilan setelah tanggal dipilih */
+.jadwal-custom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.calendar-icon {
+    font-size: 10px;
+    color: #333;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.calendar-icon:hover {
+    opacity: 0.8;
+}
+
+/* Pilihan Waktu */
+.jadwal-waktu {
+    margin-top: 70px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.jadwal-waktu h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    
+}
+
+.jadwal-session {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.jadwal-time {
+    background-color: #257180; /* Warna biru */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jadwal-time:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Metode Pembayaran */
+.jadwal-payment-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Section Judul */
+.jadwal-section-title {
+    font-size: 18px;
+    color: #fff;
+    background-color: #257180; /* Warna biru */
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+}
+
+/* Daftar Metode Pembayaran */
+.jadwal-payment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.jadwal-payment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Gambar logo arrow */
+.jadwal-logo-arrow {
+    height: 18px; 
+    width: auto;  
+}
+
+/* Gambar logo bank */
+.jadwal-logo-bank {
+    height: 17px; 
+    width: auto;  
+}
+
+.jadwal-payment-item:last-child {
+    border-bottom: none;
+}
+
+.jadwal-payment-item:hover {
+    background-color: #e6f7ff;
+}
+
+.jadwal-payment-item span {
+    flex: 1;
+    margin-left: 15px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.jadwal-payment-section-qris{
+    margin-top: 30px;
+}
+
+/* QRIS */
+.jadwal-qris {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jadwal-qris img {
+    width: 300px;
+    height: auto;
+}

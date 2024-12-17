@@ -1,0 +1,147 @@
+{% extends 'base-jadwal.html' %}
+
+{% block content %}
+{% load static %}
+
+<body>
+    <div class="jadwal-container">
+            <!-- Judul Halaman -->
+            <h1>Jadwalkan Konsultasi Online</h1>
+
+            <!-- Kartu Dokter -->
+            <div class="jadwal-card">
+                <div class="jadwal-card-image">
+                    <img src="{% static 'assets/doctor-photo1.jpg' %}" alt="Dr. Bryan H">
+                </div>
+                <div class="jadwal-card-content">
+                    <h2>Dr. Bryan H</h2>
+                    <p>Spesialis Alergi Imunologi dan Autoimun</p>
+                    <span class="jadwal-price">Rp. 50.000</span>
+                </div>
+            </div>
+
+            <!-- Pilihan Tanggal & Waktu -->
+            <h2 style="margin-top: 50px;" >Pilih Tanggal & Waktu Konsultasi </h2>
+            <div class="jadwal-tanggal">
+                <!-- Kotak tanggal -->
+                <div class="jadwal-date">   
+                    <span class="tanggal">24</span>
+                    <span class="bulan">Sept</span>
+                </div>
+                <div class="jadwal-date">
+                    <span class="tanggal">25</span>
+                    <span class="bulan">Sept</span>
+                </div>
+                <div class="jadwal-date">
+                    <span class="tanggal">26</span>
+                    <span class="bulan">Sept</span>
+                </div>
+                <div class="jadwal-date">
+                    <span class="tanggal">27</span>
+                    <span class="bulan">Sept</span>
+                </div>
+                <div class="jadwal-date" id="custom-date-picker">
+                    <div class="jadwal-custom">
+                        <span class="tanggal-custom">Kalender</span>
+                    </div>
+                    <input type="date" id="date-input" style="display: none;">
+                    <i class="bi bi-calendar-fill calendar-icon" id="calendar-icon" style="display: none;"></i>
+                </div>
+            </div>
+
+            <!-- Pilihan Waktu -->
+            <div class="jadwal-waktu">
+                <h3>Pagi</h3>
+                <div class="jadwal-session">
+                    <span class="jadwal-time">06.50 - 07.50</span>
+                    <span class="jadwal-time">08.00 - 09.00</span>
+                    <span class="jadwal-time">09.20 - 10.20</span>
+                </div>
+
+                <h3>Sore</h3>
+                <div class="jadwal-session">
+                    <span class="jadwal-time">15.00 - 16.00</span>
+                    <span class="jadwal-time">15.20 - 17.20</span>
+                </div>
+
+                <h3>Malam</h3>
+                <div class="jadwal-session">
+                    <span class="jadwal-time">19.00 - 20.00</span>
+                    <span class="jadwal-time">20.00 - 21.00</span>
+                    <span class="jadwal-time">21.10 - 22.10</span>
+                    <span class="jadwal-time">22.30 - 23.30</span>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px; text-align:left">Metode Pembayaran</h2>
+
+            <!-- Virtual Account Section -->
+            <div class="jadwal-payment-section">
+                <h3 class="jadwal-section-title">Virtual Account</h3>
+                <ul class="jadwal-payment-list">
+                    <li class="jadwal-payment-item">
+                        <img src="{% static 'assets/bca.svg' %}" alt="BCA Logo" class="jadwal-logo-bank">
+                        <span>BCA Virtual Account</span>
+                        <img src="{% static 'assets/right-arrow.jpeg' %}" alt="Arrow Right" class="jadwal-logo-arrow" id="arrow-image">                </li>
+                    <li class="jadwal-payment-item">
+                        <img src="{% static 'assets/bni.jpeg' %}" alt="BNI Logo" class="jadwal-logo-bank" >
+                        <span>BNI Virtual Account</span>
+                        <img src="{% static 'assets/right-arrow.jpeg' %}" alt="Arrow Right" class="jadwal-logo-arrow">
+                    </li>
+                    <li class="jadwal-payment-item">
+                        <img src="{% static 'assets/mandiri.jpeg' %}" alt="Mandiri Logo" class="jadwal-logo-bank">
+                        <span>Mandiri Virtual Account</span>
+                        <img src="{% static 'assets/right-arrow.jpeg' %}" alt="Arrow Right" class="jadwal-logo-arrow">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- QRIS Section -->
+            <div class="jadwal-payment-section-qris">
+                <h3 class="jadwal-section-title">QRIS</h3>
+                <div class="jadwal-qris">
+                    <img src="{% static 'assets/qris.jpeg' %}" alt="QRIS Code">
+                </div>
+            </div>
+            
+
+    </div>
+</body>
+
+    <script>
+                // Ambil elemen-elemen yang diperlukan
+        const calendarElement = document.getElementById('custom-date-picker');
+        const dateInput = document.getElementById('date-input');
+        const calendarText = calendarElement.querySelector('.tanggal-custom');
+
+        // Tambahkan event listener pada elemen "Kalender"
+        calendarElement.addEventListener('click', () => {
+            // Tampilkan input tanggal
+            dateInput.style.display = 'inline-block';
+        });
+
+        // Tambahkan event listener untuk mengubah teks setelah tanggal dipilih
+        dateInput.addEventListener('change', () => {
+            const selectedDate = new Date(dateInput.value); // Ambil nilai tanggal
+            if (!isNaN(selectedDate)) {
+                // Format tanggal yang dipilih
+                const day = selectedDate.getDate();
+                const month = selectedDate.toLocaleString('default', { month: 'short' }); // Nama bulan pendek
+                // Ubah teks "Kalender" menjadi tanggal yang dipilih
+                calendarText.textContent = `${day} ${month}`;
+                // Sembunyikan input tanggal setelah memilih
+                dateInput.style.display = 'none';
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const arrowImage = document.getElementById("arrow-image");
+            arrowImage.addEventListener("click", function() {
+                window.location.href = "/pembayaran";
+            });
+        });
+        
+
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'base-form.html' %}
+
+{% block content %}
+{% load static %}
+
+<section id="popup-penilaian" class="popup-form-section-penilaian">
+    <div class="popup-container-penilaian">
+        <h1 class="popup-h1-penilaian">Jejak Penilaian</h1>
+
+        <!-- Section untuk Website -->
+        <section class="popup-section-penilaian">
+            <h2 class="popup-h2-penilaian">Website</h2>
+            <div class="popup-question-penilaian">
+                <p>1. Apakah anda merasa nyaman saat menggunakan fitur?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="website1" id="website1-{{ i }}" value="{{ i }}">
+                        <label for="website1-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>2. Seberapa puas anda dalam menjelajahi fitur ini?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="website2" id="website2-{{ i }}" value="{{ i }}">
+                        <label for="website2-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>3. Apakah anda merasa kesulitan dalam penggunaan fitur?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="website3" id="website3-{{ i }}" value="{{ i }}">
+                        <label for="website3-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>4. Apakah masalah anda teratasi oleh fitur yang ada?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="website4" id="website4-{{ i }}" value="{{ i }}">
+                        <label for="website4-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Section untuk Dokter -->
+        <section class="popup-section-penilaian">
+            <h2 class="popup-h2-penilaian">Dokter</h2>
+            <div class="popup-question-penilaian">
+                <p>1. Apakah dokter sudah memenuhi SOP?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="dokter1" id="dokter1-{{ i }}" value="{{ i }}">
+                        <label for="dokter1-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>2. Apakah dokter memberikan solusi?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="dokter2" id="dokter2-{{ i }}" value="{{ i }}">
+                        <label for="dokter2-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>3. Apakah dokter berkomunikasi dengan nyaman?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="dokter3" id="dokter3-{{ i }}" value="{{ i }}">
+                        <label for="dokter3-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="popup-question-penilaian">
+                <p>4. Apakah dokter merespon dengan cepat?</p>
+                <div class="popup-rating-penilaian">
+                    {% for i in "123456789" %}
+                        <input type="radio" name="dokter4" id="dokter4-{{ i }}" value="{{ i }}">
+                        <label for="dokter4-{{ i }}">{{ i }}</label>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Tombol Kirim -->
+        <div class="popup-button-wrapper-penilaian">
+            <button type="button" class="popup-button-penilaian" onclick="submitRatings()">Kirim</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function submitRatings() {
+        alert("Terima kasih atas penilaiannya!");
+    }
+</script>
+
+{% endblock %}

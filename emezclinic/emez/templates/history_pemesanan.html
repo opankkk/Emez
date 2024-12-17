@@ -1,0 +1,153 @@
+{% extends 'base-history.html' %} 
+
+{% block content %} 
+{% load static %}
+
+<body>
+  <div id="popupPenilaian" class="popup hidden">
+    <div class="popup-overlay" onclick="closePopup()"></div>
+    <div class="popup-content">
+      <button class="close-button" onclick="closePopup()">&times;</button>
+      {% include 'form_penilaian.html' %}
+    </div>
+  </div>  
+
+  <div class="page-container">
+    <div class="sidebar">
+      <div class="logo">.</div>
+
+      <!-- Grouped menu items -->
+      <div class="menu-group">
+        <ul class="menu">
+          <li class="menu-item active">History Pemesanan</li>
+          <li class="menu-item">Profile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content">
+
+      <section class="content">
+        <h1>Informasi Pemesanan</h1>
+
+        <div class="order-list">
+          <div class="order-item">
+            <div class="order-links">
+              <button class="button-link">Link Zoom</button>
+              <button class="button-link">Link Drive EMR</button>
+            </div>
+            <div class="order-info">
+              <h2>Informasi</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+                egestas odio.
+              </p>
+              <button class="button-detail" onclick="openPopup()">Isi Kuisioner</button>
+            </div>
+          </div>
+          <div class="order-item">
+            <div class="order-links">
+              <button class="button-link">Link Zoom</button>
+              <button class="button-link">Link Drive EMR</button>
+            </div>
+            <div class="order-info">
+              <h2>Informasi</h2>
+              <p>
+                Prosedur yang sesuai telah dikirim. Silakan isi dokumen
+                kuisioner.
+              </p>
+              <button class="button-detail" onclick="openPopup()">Isi Kuisioner</button>
+            </div>
+          </div>
+          <div class="order-item">
+            <div class="order-links">
+              <button class="button-link">Link Zoom</button>
+              <button class="button-link">Link Drive EMR</button>
+            </div>
+            <div class="order-info">
+              <h2>Informasi</h2>
+              <p>
+                Informasi sesi konsultasi akan tersedia sesaat setelah pemesanan
+                selesai.
+              </p>
+              <button class="button-detail" onclick="openPopup()">Isi Kuisioner</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+<style>
+/* Popup Overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background hitam transparan */
+  display: flex;
+  justify-content: center; /* Pusatkan secara horizontal */
+  align-items: center; /* Pusatkan secara vertikal */
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none; /* Sembunyikan popup saat tidak aktif */
+}
+
+/* Konten Popup */
+.popup-content {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px; /* Maksimal lebar */
+  max-height: 70vh; /* Maksimal tinggi */
+  overflow-y: auto; /* Tambahkan scroll jika konten melebihi tinggi maksimal */
+  position: relative; /* Untuk tombol close */
+}
+
+/* Tombol Close */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Menonaktifkan scroll pada body */
+body.no-scroll {
+  overflow: hidden;
+}
+
+
+.close-button:hover {
+  color: #ff9900;
+}
+</style>
+
+<script>
+  // Fungsi untuk membuka popup
+  function openPopup() {
+    document.getElementById('popupPenilaian').classList.remove('hidden');
+    document.body.classList.add('no-scroll'); // Menonaktifkan scroll pada body
+  }
+
+  // Fungsi untuk menutup popup
+  function closePopup() {
+    document.getElementById('popupPenilaian').classList.add('hidden');
+    document.body.classList.remove('no-scroll'); // Mengaktifkan kembali scroll pada body
+  }
+</script>
+
+
+{% endblock%}

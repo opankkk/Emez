@@ -1,0 +1,1366 @@
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300; /* Menggunakan angka spesifik lebih disarankan */
+    font-style: normal;
+  }
+
+  html {
+    scroll-behavior: smooth;
+}
+
+.consultation-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 55px;
+
+}
+
+.background-room {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.background-room img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.consultation-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.orange-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(203, 96, 64, 0.53); /* Changed to #CB6040 with 53% opacity */
+    z-index: 1;
+}
+
+.doctors-image {
+    position: absolute;
+    right: 32%; 
+    top: 50%;
+    transform: translate(0, -50%); 
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.doctors-image img {
+    height: 100%; /* Changed from 90% to 100% */
+    object-fit: contain;
+    max-width: none; /* Removed max-width constraint */
+}
+
+.text-content {
+    position: absolute;
+    right: 5%;
+    width: 30%;
+    z-index: 3;
+    padding: 20px;
+}
+
+.text-content h2 {
+    color: #000; /* Warna teks */
+    font-size: 32px; /* Ukuran font */
+    font-weight: 500; /* Berat font */
+    line-height: 1.4; /* Jarak antar baris */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    background: linear-gradient(135deg, #CB6040, #FFA07A); /* Menambahkan gradien */
+    -webkit-background-clip: text; /* Hapus ini */
+    background-clip: text; /* Ganti dengan ini, tapi hanya berfungsi di Firefox */
+    color: transparent; /* Membuat warna teks transparan */
+    padding: 10px; /* Menambah padding */
+    margin-bottom: 20px; /* Menambah jarak di bawah */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan teks */
+    transition: transform 0.3s ease, color 0.3s ease; /* Menambahkan efek transisi */
+}
+
+.text-content h2:hover {
+    transform: scale(1.05); /* Menambahkan efek pembesaran saat hover */
+    color: #000; /* Kembali ke warna hitam saat hover */
+}
+
+
+
+/* Media Query for responsive design */
+@media (max-width: 768px) {
+    .consultation-section {
+        height: 500px;
+    }
+
+    .orange-overlay {
+        width: 100%;
+    }
+
+    .doctors-image {
+        left: 50%;
+        right: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+    }
+
+    .doctors-image img {
+        height: auto;
+        width: 80%;
+    }
+
+    .text-content {
+        width: 80%;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        bottom: 30px;
+    }
+
+    .text-content h2 {
+        font-size: 24px;
+    }
+}
+/* Add these styles to your existing CSS */
+
+.doctor-selection {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-decoration: underline;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.doctor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.doctor-photo {
+    position: relative;
+    margin-bottom: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+.doctor-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.rating {
+    
+        position: absolute;
+        top: 10px;
+        right: -20px;
+        background: #0891b2;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+
+
+.doctor-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.specialization {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.consultation-btn {
+    background: #257180;
+    color: #F2E5BF;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    font-weight: 500;
+    z-index: 10; /* Menjaga tombol agar berada di depan */
+
+}
+
+.consultation-btn:hover {
+    background: #257180;
+}
+
+.search-doctor {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search-btn {
+    background: #257180;
+    color: #F2E5BF;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.search-btn:hover {
+    background: #245A68;
+}
+.hospital-recommendation {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hospital-recommendation .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hospital-recommendation .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hospital-recommendation .content-overlay {
+    position: relative;
+    z-index: 3;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+}
+
+/* Add the color overlay */
+.hospital-recommendation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(203, 96, 64, 0.65); /* #CB6040 with 65% opacity */
+    z-index: 2;
+}
+
+.hospital-recommendation h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.hospital-recommendation p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.search-clinic-btn {
+    background: #2F6B7B;
+    color: #F2E5BF;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.search-clinic-btn:hover {
+    background: #245A68;
+}
+
+/* Media Query for responsive design */
+@media (max-width: 768px) {
+    .hospital-recommendation {
+        height: 350px;
+    }
+
+    .hospital-recommendation h2 {
+        font-size: 32px;
+    }
+
+    .hospital-recommendation p {
+        font-size: 16px;
+    }
+
+    .search-clinic-btn {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+}
+.payment-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 120px;
+    
+}
+
+.payment-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+}
+
+.doctor-appointment-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.doctor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.doctor-details {
+    flex: 1;
+}
+
+.doctor-details h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 10px;
+}
+
+.label {
+    font-weight: 500;
+    color: #666;
+    min-width: 60px;
+}
+
+.value {
+    color: #333;
+}
+
+.payment-info {
+    margin: 30px 0;
+}
+
+.virtual-account {
+    background: #FF7732;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.va-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.va-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.payment-button {
+    width: 100%;
+    padding: 15px;
+    background: #257180;
+    color: #F2E5BF;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background: #245A68;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .payment-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .doctor-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .doctor-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .va-number {
+        font-size: 20px;
+    }
+}
+.receipt-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 60px;
+}
+
+.receipt-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.receipt-card {
+    background: #2F6B7B;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(253, 139, 81, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.receipt-status {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success-icon {
+    width: 40px;
+    height: 40px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.receipt-status h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.transaction-date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.receipt-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+.transaction-details {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 15px;
+    background: #ffb867;
+    color: #916d00;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transisi untuk semua perubahan */
+}
+
+.form-button:hover {
+    background: #f39c12;  /* Perubahan warna lebih mencolok */
+    transform: translateY(-4px) scale(1.05);  /* Menambahkan pembesaran dan sedikit pergerakan */
+    box-shadow: 0 6px 18px rgba(47, 107, 123, 0.3); /* Efek bayangan lebih besar dan transparan */
+}
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .receipt-container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .receipt-card {
+        padding: 20px;
+    }
+
+    .amount {
+        font-size: 24px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detail-value {
+        text-align: right;
+    }
+}
+.products-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* background: #FD8B51; */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.product-info {
+    padding: 20px;
+    background: #2F6B7B;
+    color: white;
+    height: 200px; /* Menetapkan tinggi tetap */
+    display: flex; /* Menggunakan flexbox untuk tata letak internal */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    justify-content: space-between; /* Memastikan elemen terdistribusi dengan baik */
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.buy-button {
+    background: #FD8B51;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.buy-button:hover {
+    background: #e67941;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-section {
+        padding: 40px 0;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+}
+.testimonial-section {
+    padding: 80px 0;
+    background-color: rgba(84, 84, 84, 0.2); /* 0.1 berarti 10% opacity */
+    color: white;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-image-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #FD8B51;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    position: relative;
+    padding: 20px;
+}
+
+.testimonial-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FD8B51;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.quote-marks {
+    font-size: 60px;
+    color: rgba(253, 139, 81, 0.3);
+    font-family: Georgia, serif;
+    position: absolute;
+    line-height: 1;
+}
+
+.quote-marks:first-of-type {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.quote-marks.closing {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonial-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .testimonials-grid {
+        gap: 30px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .testimonial-name {
+        font-size: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 16px;
+    }
+
+    .quote-marks {
+        font-size: 40px;
+    }
+}
+
+/* Animation for testimonials */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Optional: Hover effect for images */
+.testimonial-image-wrapper:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Add a subtle pattern overlay */
+.testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+                      linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%);
+    background-size: 3px 3px;
+    opacity: 0.1;
+}
+
+
+
+.doc-selection-content {
+    padding: 4rem 2rem;
+    background: #fff;
+    margin-top: 70px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.doc-section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.doc-doctors-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+.doc-doctor-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;               /* Mengaktifkan Flexbox */
+    flex-direction: column;       /* Susunan vertikal */
+    justify-content: space-between; /* Menyebarkan ruang di antara elemen */
+}
+
+.doc-doctors-cards2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 20px;
+}
+
+.doc-doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.doc-doctor-photo {
+    position: relative;
+    height: 200px;
+}
+
+.doc-doctor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doc-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #257180;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.doc-doctor-card h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.doc-specialization {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    min-height: 40px; /* Atur tinggi minimum agar posisi sama */
+}
+
+.doc-price {
+    padding: 0 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.doc-consultation-btn {
+    width: calc(100% - 2rem);
+    margin: auto 1rem 1rem; /* Beri margin auto pada atas agar tombol selalu di bawah */
+    padding: 7px;
+    background: #257180;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.doc-consultation-btn:hover {
+    background: #0e7490;
+}
+
+
+/* Search Section */
+.search-section {
+    display: flex;
+    flex-direction: column; /* Atur layout secara vertikal */
+    align-items: center; /* Memusatkan secara horizontal */
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    margin-bottom: 20px; /* Beri jarak bawah agar filter tidak menempel pada search */
+}
+
+/* Search Input */
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Button */
+.search-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Filter Container */
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center; /* Memusatkan filter di tengah */
+    margin-bottom: 100px;
+    
+}
+
+
+.filter-btn {
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    gap: 20px;
+    padding: 8px 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #fff;
+}
+
+/* Dropdown Icon Style */
+.filter-btn img {
+    width: 18px; /* Sesuaikan ukuran ikon */
+    height:fit-content;
+    margin-top: 3px;
+    margin-left: auto;
+}
+
+/* Style dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown when active */
+.dropdown-content.show {
+    display: block; /* Display block when active */
+}
+
+
+.clear-filter {
+    font-size: 17px;
+    padding: 8px 6px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+}
+
+/* View More Button */
+.view-more-container {
+    text-align: center;
+}
+
+.view-more-btn {
+    margin-top: 70px;
+    padding: 7px 90px;
+    background: #257180;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+    background: #0e7490;
+}
+/* Search Section */
+.search-section {
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Filter Buttons */
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #e2e2e2;
+}
+
+.clear-filter {
+    padding: 8px 20px;
+    border: none;
+    background: none;
+    color: #0891b2;
+    cursor: pointer;
+}
+.form-container {
+    margin: 20px auto;
+    max-width: 600px;
+    margin-top: 100px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #ff7f50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Memastikan input memiliki lebar penuh */
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Pastikan grup input menggunakan lebar penuh */
+}
+
+.input-group input[type="tel"] {
+    flex: 1; /* Input mengambil ruang yang tersisa */
+}
+
+.verify-button {
+    flex-shrink: 0; /* Mencegah tombol mengecil */
+    padding: 10px;
+    background-color: #ff7f50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gender-options {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Jarak antar opsi */
+}
+
+.gender-options input[type="radio"] {
+    margin-right: 0;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+textarea {
+    resize: vertical; /* Batasi pengubahan ukuran pada arah vertikal saja */
+}
+
+.submit-button {
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Menambahkan transisi */
+}
+
+.submit-button:hover {
+    background-color: #ff5733; /* Warna yang lebih gelap saat hover */
+    transform: scale(1.05); /* Sedikit membesarkan tombol saat hover */
+}
+
+
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara checkbox dan teks */
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px; /* Lebar checkbox */
+    height: 20px; /* Tinggi checkbox */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<section class="form-container">
+    <h1>FORMULIR DATA DIRI</h1>
+    <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Ketik Nama Kamu">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Ketik Email Kamu">
+        
+        <label for="telepon">Nomor Telepon</label>
+        <div class="input-group">
+            <input type="tel" id="telepon" placeholder="Ketik Nomor Telepon Kamu">
+            <button type="button" class="verify-button">Verify</button>
+        </div>
+
+        <label for="ktp">Nomor KTP</label>
+        <input type="text" id="ktp" value="Value">
+        
+        <label>Jenis Kelamin</label>
+        <div class="gender-options">
+            <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+            <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+        </div>
+
+        <label for="keluhan">Keluhan</label>
+        <textarea id="keluhan" placeholder="Ketik Keluhan Kamu Disini"></textarea>
+        
+        <label for="kota">Kota</label>
+        <input type="kota" id="kota" placeholder="Masukkan kota kamu">
+        
+        <label for="tanggal">Tanggal</label>
+        <input type="date" id="tanggal">
+        
+        <label class="checkbox-container">
+            <input type="checkbox"> Klik untuk menyetujui formulir di atas
+        </label>
+        <button type="button" class="submit-button" onclick="window.location.href='/history_pemesanan'">Kirim</button>
+
+    </form>
+</section>
+
+
+{% endblock%}

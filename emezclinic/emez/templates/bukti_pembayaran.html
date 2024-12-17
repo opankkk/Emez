@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="receipt-container">
+    <h1 class="receipt-title">Bukti Pembayaran</h1>
+    
+    <div class="receipt-card">
+        <div class="receipt-status">
+            <div class="success-icon">✓</div>
+            <h2>Transaksi berhasil diproses</h2>
+            <p class="transaction-date">9 Oktober 2024, 16:39:45 WIB</p>
+            <div class="amount">Rp 45.000</div>
+        </div>
+
+        <div class="receipt-divider"></div>
+
+        <div class="transaction-details">
+            <div class="detail-row">
+                <span class="detail-label">ID Transaksi</span>
+                <span class="detail-value">#847598475d</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Nama Pengirim</span>
+                <span class="detail-value">DrakonoF</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Bank Pengirim</span>
+                <span class="detail-value">BNI</span>
+            </div>
+        </div>
+
+        <button class="form-button" id="form-button">Isi Formulir Data Diri</button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const formButton = document.getElementById("form-button");
+        formButton.addEventListener("click", function() {
+            window.location.href = "/formulir";
+        });
+    });
+    
+</script>   
+
+{% endblock %}
